@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Setting up an IPython Development Environment from Source"
-date: 2014-06-12 15:32:18 -0700
+date: 2014-06-15 22:40:00 -0700
 comments: true
 categories: [IPython, Python, PySide, ZeroMQ] 
 ---
