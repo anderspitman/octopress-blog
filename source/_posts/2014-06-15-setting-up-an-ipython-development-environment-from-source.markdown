@@ -19,7 +19,9 @@ should be very similar for most modern Linux systems. The biggest things that
 will be different is installing build dependencies. Usually on debian based
 system that will involve something along the lines of:
 
-    sudo apt-get install build-essential
+``` bash
+sudo apt-get install build-essential
+```
 
 And maybe a few other packages.
 
@@ -28,7 +30,9 @@ And maybe a few other packages.
 For this example I will be installing to /opt/python277. First, create the
 directory:
 
-    sudo mkdir -p /opt/python277
+``` bash
+sudo mkdir -p /opt/python277
+```
 
 Now we'll get the python source.
 I want to use the latest Python 2.7. As of this writing it's 2.7.7.
@@ -38,13 +42,17 @@ should work as well, but might be a little different.
 
 Extract the downloaded tarball and go into the directory:
 
-    tar -xvf Python-2.7.7.tar.xz
-    cd Python-2.7.7
+``` bash
+tar -xvf Python-2.7.7.tar.xz
+cd Python-2.7.7
+```
 
 We will now configure Python source:
 
-    export LD_RUN_PATH=/opt/python277/lib
-    ./configure --prefix=/opt/python277 --enable-shared
+``` bash
+export LD_RUN_PATH=/opt/python277/lib
+./configure --prefix=/opt/python277 --enable-shared
+```
 
 What we're doing here is telling python to install to /opt/python277
 and to be available as a shared library. This is important for
@@ -54,12 +62,16 @@ we didn't set that environment variable, it would link against the
 system's python library, which causes all sorts of confusion.
 
 Now make and install:
-    make
-    sudo make install
+``` bash
+make
+sudo make install
+```
 
 This will install a fresh python into /opt/python277. You can test it by running
 
-    /opt/python277/bin/python
+``` bash
+/opt/python277/bin/python
+```
 
 You should get a python 2.7.7 prompt.
 
@@ -71,34 +83,46 @@ directory from pypi. It depends on setuptools, so download that
 [here](https://pypi.python.org/packages/source/s/setuptools/setuptools-4.0.1.tar.gz#md5=190b1d4470de9bae0b4414353e14700d)
 
 Then extract and install it:
-    tar -xzvf setuptools-4.0.1.tar.gz
-    cd setuptools-4.0.1/
-    sudo /opt/python277/bin/python setup.py install
+``` bash
+tar -xzvf setuptools-4.0.1.tar.gz
+cd setuptools-4.0.1/
+sudo /opt/python277/bin/python setup.py install
+```
 
 Now do the same thing with pip. The one I used is
 [here](https://pypi.python.org/packages/source/p/pip/pip-1.5.6.tar.gz#md5=01026f87978932060cc86c1dc527903e)
-    tar -xzvf pip-1.5.6.tar.gz
-    cd pip-1.5.6/
-    sudo /opt/python277/bin/python setup.py install
+``` bash
+tar -xzvf pip-1.5.6.tar.gz
+cd pip-1.5.6/
+sudo /opt/python277/bin/python setup.py install
+```
 
 Alright, we should now be able to install most python packages from pypi simply
 with pip now. The first thing we need is virtualenv. If you're not familiar with
 virtualenv, it's awesome. Check it out [here](http://virtualenv.readthedocs.org/en/latest/).
 Install it with:
-    sudo /opt/python277/bin/pip install virtualenv
+``` bash
+sudo /opt/python277/bin/pip install virtualenv
+```
 
 ## Set up IPython virtualenv
 
 We'll now create a virtualenv just for ipython development. I like to keep my
 virtualenvs in ~/virt_python.
-    mkdir ~/virt_python
-    cd ~/virt_python
+``` bash
+mkdir ~/virt_python
+cd ~/virt_python
+```
 
 Create the virtualenv. I'll call it "ipython-dev":
-    /opt/python277/bin/virtualenv ipython-dev
+``` bash
+/opt/python277/bin/virtualenv ipython-dev
+```
 
 Activate it:
-    source ipython-dev/bin/activate
+``` bash
+source ipython-dev/bin/activate
+```
 
 Now when we run python or pip it will use the executables in
 ~/virt_python/ipython-dev, and any packages we install with pip
@@ -110,18 +134,24 @@ The IPython dependencies we need will depend on which parts of IPython you want
 to work on. For example, to run the notebook we'll want numpy, ZeroMQ, jinja,
 and tornado. It's now simply a
 matter of using pip:
-    pip install numpy pyzmq jinja2 tornado
+``` bash
+pip install numpy pyzmq jinja2 tornado
+```
 
 Alternatively you can install the dependencies for a specific IPython console
 automatically as explained below.
 
 I want to run the IPython QT console, which depends on QT. I like the [PySide](http://qt-project.org/wiki/pyside)
 python bindings. First install QT. On my system I needed:
-    sudo apt-get install qt4-default
+``` bash
+sudo apt-get install qt4-default
+```
 
 Then install PySide:
-    export PYTHON_INCLUDE_DIRS=/opt/python277/lib
-    pip install pyside
+``` bash
+export PYTHON_INCLUDE_DIRS=/opt/python277/lib
+pip install pyside
+```
 
 We need to set PYTHON_INCLUDE_DIRS so that qmake knows what to build against.
 
@@ -130,15 +160,21 @@ We need to set PYTHON_INCLUDE_DIRS so that qmake knows what to build against.
 ## Get the IPython Source
 
 Clone the repository from github into ~/ipython-dev:
-    cd
-    git clone https://github.com/ipython/ipython ipython-dev
+``` bash
+cd
+git clone https://github.com/ipython/ipython ipython-dev
+```
 
 Install dependencies for the IPython notebook with the following:
-    pip install -e ".[notebook]"
+``` bash
+pip install -e ".[notebook]"
+```
 
 This also creates an IPython executable in your virtualenv so as long as it is
 active you can simply run
-    ipython
+``` bash
+ipython
+```
 to run IPython from your development source.
 
 You should now be set to start hacking!
