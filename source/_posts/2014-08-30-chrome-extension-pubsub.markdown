@@ -11,6 +11,8 @@ This tutorial builds the same Chrome extension popup as my
 tutorial, but uses the [chromeps](https://github.com/andersp/chromeps) pubsub module to make things easier.
 For more detailed information, I highly recommend looking through that tutorial.
 
+You can get all the code for this tutorial from https://github.com/andersp/chrome-extension-pubsub-example
+
 ## Background Info
 When writing chrome extensions with content scripts, you often find yourself doing a lot of message passing.
 If your content scripts include iframes, things get even more complicated because in order to communicate 
