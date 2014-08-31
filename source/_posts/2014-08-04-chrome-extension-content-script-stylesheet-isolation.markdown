@@ -6,6 +6,10 @@ comments: true
 categories: [Chrome Extension, HTML, HTML5, CSS, CSS3, JavaScript, Tutorial]
 ---
 
+**UPDATE 2014-08-30**: For a way to handle message passing using the 
+[chromeps](https://github.com/andersp/chromeps) pubsub module, see
+[this post](http://anderspitman.com/blog/2014/08/30/chrome-extension-pubsub/).
+
 ## Background Info
 
 When writing Chrome extensions, if you want to inject HTML and CSS into pages the user is
