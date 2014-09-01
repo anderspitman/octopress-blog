@@ -7,7 +7,7 @@ categories: [Chrome Extension, HTML, HTML5, CSS, CSS3, JavaScript, Tutorial]
 ---
 
 **UPDATE 2014-08-30**: For a way to handle message passing using the 
-[chromeps](https://github.com/andersp/chromeps) pubsub module, see
+[chromeps](https://github.com/anderspitman/chromeps) pubsub module, see
 [this post](http://anderspitman.com/blog/2014/08/30/chrome-extension-pubsub/).
 
 ## Background Info
@@ -54,7 +54,7 @@ caveats, but nothing too bad. I'll run through the basics of how I implemented
 it.
 
 All of the code used in this example is available from the following github repo:
-https://github.com/andersp/chrome-extension-css-isolation-example
+https://github.com/anderspitman/chrome-extension-css-isolation-example
 
 ## Create a new Chrome Extension
 

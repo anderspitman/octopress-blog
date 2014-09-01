@@ -8,10 +8,10 @@ categories: [Chrome Extension, HTML, HTML5, CSS, CSS3, JavaScript, Tutorial]
 
 This tutorial builds the same Chrome extension popup as my
 [Chrome Extension Content Script Stylesheet Isolation](http://anderspitman.com/blog/2014/08/04/chrome-extension-content-script-stylesheet-isolation/)
-tutorial, but uses the [chromeps](https://github.com/andersp/chromeps) pubsub module to make things easier.
+tutorial, but uses the [chromeps](https://github.com/anderspitman/chromeps) pubsub module to make things easier.
 For more detailed information, I highly recommend looking through that tutorial.
 
-You can get all the code for this tutorial from https://github.com/andersp/chrome-extension-pubsub-example
+You can get all the code for this tutorial from https://github.com/anderspitman/chrome-extension-pubsub-example
 
 ## Background Info
 When writing chrome extensions with content scripts, you often find yourself doing a lot of message passing.
@@ -27,7 +27,7 @@ demonstrates the different types of message passing mentioned above.
 
 ## Install chromeps
 Create a new empty directory for you extension and download `chromeps.js` into it. You can get it from
-https://github.com/andersp/chromeps
+https://github.com/anderspitman/chromeps
 
 ## Create a new Chrome Extension
 

@@ -66,7 +66,7 @@ exten => 100,1,Noop()
 
 ## Get the Code
 
-Either clone my repo at https://github.com/andersp/ari-quickstart or
+Either clone my repo at https://github.com/anderspitman/ari-quickstart or
 just copy and paste the script from below.
 
 You'll need to install requests and websocket-client. If you cloned the
